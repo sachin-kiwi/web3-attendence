@@ -1,11 +1,21 @@
-import WalletComponent from '@/component/wallet';
+import WalletComponent from '@/component/wallet/wallet';
+import WalletAdapter from '@/component/walletAdapter';
+import { HydrationProvider, Client } from 'react-hydration-provider';
 
-export default function App({ Component, pageProps }) {
+const App = ({ Component, pageProps }) => {
   return (
     <>
-      <WalletComponent>
-        <Component {...pageProps} />
-      </WalletComponent>
+      <HydrationProvider>
+        <Client>
+          <WalletComponent>
+            <WalletAdapter>
+              <Component {...pageProps} />
+            </WalletAdapter>
+          </WalletComponent>
+        </Client>
+      </HydrationProvider>
     </>
   );
-}
+};
+
+export default App;

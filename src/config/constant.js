@@ -34,3 +34,6 @@ export const createChain = (data) => {
     };
   });
 };
+
+export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
+export const ISMAINNET = process.env.NEXT_IS_MAINNET || false;

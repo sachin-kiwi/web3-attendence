@@ -17,7 +17,7 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
 
 const appDetail = {
   appName: 'My RainbowKit App',
-  projectId: '1394023ce25f2b728b4c0a01fc1ac132',
+  projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_ID,
   chains,
   UNSTABLE_shimOnConnectSelectAccount: true
 };
